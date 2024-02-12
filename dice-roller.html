@@ -4,61 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>   
-        body{
-            text-align: center;
-        }
-        .container{
-            text-align: center;
-            margin: auto;
-            width: 400px;
-            background-color: antiquewhite;
-            box-shadow: 8px 10px 15px rgba(0, 0, 0, 0.37);
-            padding: 20px 30px;
-        }
-        .container h1{
-            font-size: 38px;
-        }
-        .container form input{
-            width: 100px;
-            padding: 5px 10px;
-            font-size: 18px;
-            background-color: white;
-            border-radius: 5px;
-        }
-        .container form label{
-            font-size: 18px;
-            font-weight: 600;
-        }
-        .container form button{
-            padding: 10px 15px;
-            font-size: 18px;
-            font-weight: 600;
-            color: white;
-            background:linear-gradient(25deg,blue,rgb(129, 4, 141),purple);
-            border-radius: 5px;
-            border: none;
-        }
-        .images{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            
-            justify-content: center;
-        }
-        .images img{
-            width: 150px;
-        }
-        .output{
-            border-radius: 5px;
-            padding: 20px 30px;
-        }
-        .output p{
-            font-size: 22px;
-            font-weight: 600;
-        }
-
-    </style>
+    <link rel="stylesheet" href="dice-roller.css">
 </head>
 <body>
     <div class="container">
@@ -75,25 +21,8 @@
         <p id="result"></p>
         <div class="images"></div>
     </div>
-    <script>
-        let diceNum = document.getElementById('diceNum')
-        let result = document.getElementById('result')
-        let images = document.getElementsByClassName('images')[0]
-        let outDiv = document.getElementsByClassName('output')[0]
-        function dice(){
-            let numDice = []
-            let numImage = []
-            for(let i=1;i<=Number(diceNum.value);i++){
-                let num = Math.ceil(Math.random()*6)
-                numDice.push(num)
-                numImage.push(`<img src='dice/${num}.png' alt='dice ${num} img'>`)
-            }
-            result.textContent = `Rolled Dice value is: ${numDice.join(', ')}`
-            images.innerHTML = numImage.join('')
-            outDiv.style.backgroundColor = `rgb(${250},${211},${219})`
-            outDiv.style.boxShadow = `${10}px ${10}px ${10}px rgba(${0},${0},${0},${0.37})`;
-            console.log(outDiv)
-        }
+    <script src="dice-roller.js">
+        
     </script>
 </body>
 </html>
